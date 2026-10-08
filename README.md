@@ -1,56 +1,73 @@
-# Welcome to your Expo app 👋
+# Spotifysito
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Spotifysito es una aplicación móvil desarrollada con React Native y Expo como proyecto para practicar diferentes tipos de navegación y el consumo de una API externa.
 
-## Get started
+La aplicación permite explorar artistas, consultar sus álbumes y ver las canciones disponibles. También cuenta con un sistema de favoritos para guardar artistas y álbumes.
 
-1. Install dependencies
+## ¿Qué se hizo?
 
-   ```bash
-   npm install
-   ```
+Durante el desarrollo trabajamos principalmente en:
 
-2. Start the app
+- Navegación con Stack, Tabs y Drawer.
+- Consulta de información musical desde una API externa.
+- Listado de artistas y álbumes.
+- Vista de detalle de artistas y álbumes.
+- Consulta de canciones de cada álbum.
+- Sistema de favoritos.
+- Guardado de favoritos para que no se pierdan al cerrar la aplicación.
+- Diseño de una interfaz oscura con detalles en color morado.
 
-   ```bash
-   npx expo start
-   ```
+## API utilizada
 
-In the output, you'll find options to open the app in a
+Para obtener la información de artistas, álbumes y canciones utilizamos **TheAudioDB**.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+La API nos permite buscar un artista y obtener información como:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Nombre del artista.
+- Género.
+- Imagen.
+- Álbumes.
+- Canciones.
+- Duración de las canciones.
 
-## Get a fresh project
+También utilizamos los endpoints de la API para consultar los álbumes de un artista y las canciones de un álbum.
 
-When you're ready, run:
+## Tecnologías utilizadas
+
+- React Native
+- Expo
+- React Navigation
+- JavaScript
+- TheAudioDB API
+- AsyncStorage
+- Expo Vector Icons
+
+## Navegación
+
+La aplicación utiliza los tres tipos de navegación solicitados en el proyecto:
+
+**Drawer**
+- Inicio
+- Explorar
+- Perfil
+- Acerca de
+
+**Tabs**
+- Artistas
+- Álbumes
+- Favoritos
+
+**Stack**
+- Lista de artistas → Detalle del artista
+- Lista de álbumes → Detalle del álbum → Canciones
+
+## Favoritos
+
+Los artistas y álbumes se pueden guardar como favoritos. Para conservar estos datos utilizamos `AsyncStorage`, por lo que los favoritos permanecen guardados aunque se cierre la aplicación.
+
+## Ejecutar el proyecto
+
+Primero instalar las dependencias:
 
 ```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+npm install
